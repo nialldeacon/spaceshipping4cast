@@ -22,3 +22,5 @@ Wind is generated in costal_wind.py . Weather and pressure are generated based o
 
 Thick atmosphere stations can have rain or fog (I kind of made up the fog) and have pressure, tenuous atmospheres have pressure and no weather, no atmosphere stations have no weather and no pressure. The pressure readings are in millibars and should be +/-3% of the rough atmospheric pressure I found for each object from a quick google.
 Visibilty distance is generated in costal_forecast.py based on presence of fog and/or a thick atmosphere
+
+Tweeting: The code is set up to start tweeting at 0520 when the shipping forecast goes out on Radio 4. It then tweets one forecast per hour. It does 10 area forecasts, 6 costal stations and 4 inshore forecasts per day finishing just before the final bulletin on Radio 4
