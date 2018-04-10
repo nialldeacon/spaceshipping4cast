@@ -1,6 +1,8 @@
 # spaceshipping4cast
 This code produces tweets containing randomly generated shipping forecasts for astrophysical locations. Some of the stuff in it is vaguely scientific, most of it is nonsense.
 
+Requirements: tweepy.py by https://github.com/tweepy/tweepy
+
 There are three parts to the shipping forecast; the area forecast, reports from costal stations and the inshore waters forecast. For the purposes of this twitter feed the inshore waters are the spaces in-between planet orbits in the solar system and the costal stations are mostly on moons in the solar system. The area forecasts are all astronomical objects outside the solar system.
 
 Area forecast:
