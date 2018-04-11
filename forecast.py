@@ -171,7 +171,7 @@ forecast_start_string="And now the Spaceshipping Forecast, issued by the Space M
 api.update_status(forecast_start_string)
 time.sleep(61)
 n_areas=len(forecast_areas)
-n_forecasts=0
+n_forecasts=10
 use_vec1=random.sample(xrange(n_areas),n_forecasts)
 use_vec=sorted(use_vec1)
 #loop over objects in the forecast
