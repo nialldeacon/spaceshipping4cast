@@ -4,7 +4,7 @@ This code produces tweets containing randomly generated shipping forecasts for a
 Requirements: tweepy.py by https://github.com/tweepy/tweepy
 Needs a file called secrets.py containing the twitter consumer & API keys and secrets
 
-There are three parts to the shipping forecast; the area forecast, reports from costal stations and the inshore waters forecast. For the purposes of this twitter feed the inshore waters are the spaces in-between planet orbits in the solar system and the costal stations are mostly on moons in the solar system. The area forecasts are all astronomical objects outside the solar system.
+There are three parts to the shipping forecast; the area forecast, reports from costal stations and the inshore waters forecast. For the purposes of this twitter feed the inshore waters are the spaces in-between planet orbits in the solar system and the costal stations are mostly on moons in the solar system. The area forecasts are almost all astronomical objects outside the solar system.
 
 Area forecast:
 An area forecast has four parts; wind, sea conditions, weather, visibility. The weather is generated inside area_forecast.py as is the force for the wind (higher wind forces are less likely to be generated). The wind force is then passed to wind.py and seastate.py which generate wind and sea conditions based on the wind force. These parts are randomly generated and have no astrophysical meaning. The weather depends on the class of object an area forecast is for. There are
