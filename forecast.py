@@ -109,6 +109,8 @@ class nebula:
     fair = 'fair'
     def __init__(self, name):
         self.name = name
+
+gap=' '
 delay=3600        #setting time delay between forecasts
 #define forecast areas
 forecast_areas=[ ]
@@ -165,10 +167,11 @@ costal_stations.append(costalstation_no_atmo('Quaoar'))
 
 #generate area forecasts
 forecast_start_string="And now the Spaceshipping Forecast, issued by the Space Met Office on behalf of the Interstellar and Interplanetary Agency at 0505 today."
+
 api.update_status(forecast_start_string)
-time.sleep(10)
+time.sleep(61)
 n_areas=len(forecast_areas)
-n_forecasts=10
+n_forecasts=0
 use_vec1=random.sample(xrange(n_areas),n_forecasts)
 use_vec=sorted(use_vec1)
 #loop over objects in the forecast
@@ -177,12 +180,12 @@ for i0 in range(0,n_forecasts):
     while forecast_len>250:
         forecast_string=area_forecast(use_vec[i0],forecast_areas)
         forecast_len=len(forecast_string)
-        api.update_status(forecast_string)
-        time.sleep(delay)
+    api.update_status(forecast_string)
+    time.sleep(delay)
 #generate costal stations
 forecast_start_string="Weather reports now for solar system stations for 0400"
 api.update_status(forecast_start_string)
-time.sleep(10)
+time.sleep(61)
 n_areas=len(costal_stations)
 n_forecasts=6
 use_vec1=random.sample(xrange(n_areas),n_forecasts)
@@ -193,12 +196,12 @@ for i0 in range(0,n_forecasts):
     while forecast_len>250:
         forecast_string=costal_report(use_vec[i0],costal_stations)
         forecast_len=len(forecast_string)
-        print forecast_string
-        time.sleep(delay)
+    api.update_status(forecast_string)
+    time.sleep(delay)
 #generate inshore forecasts
 forecast_start_string="And here is the forecast for the inshore waters of the solar system valid for the following 24 hours issued by the Space Met Office at 0500 today"
 api.update_status(forecast_start_string)
-time.sleep(10)
+time.sleep(61)
 n_areas=len(inshore_areas)
 n_forecasts=4
 use_vec1=random.sample(xrange(n_areas),n_forecasts)
@@ -209,6 +212,6 @@ for i0 in range(0,n_forecasts):
     while forecast_len>250:
         forecast_string=area_forecast(use_vec[i0],inshore_areas)
         forecast_len=len(forecast_string)
-        print forecast_string
-        time.sleep(delay)
+    api.update_status(forecast_string)
+    time.sleep(delay)
 
