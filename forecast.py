@@ -51,8 +51,8 @@ class Ldwarflike:
     def __init__(self, name):
         self.name = name
 class neptunelike:
-    rain = 'rain'        
-    showers = 'diamond showers'
+    rain = 'diamond rain'        
+    showers = 'squally showers of diamonds'
     drizzle='diamond drizzle'
     fog = 'ammonium sulfide fog'
     has_fog=1
