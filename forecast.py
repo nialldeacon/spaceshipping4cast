@@ -167,7 +167,7 @@ inshore_areas.append(dead('Neptune to Kuiper Belt'))
 inshore_areas.append(dead('Kuiper Belt to Oort Cloud'))
 #define costal stations
 costal_stations=[ ]
-costal_stations.append(costalstation_minimal_atmo('Caloris Basin',0.0000014))
+costal_stations.append(costalstation_minimal_atmo('Caloris Basin',0.00000000001))
 costal_stations.append(costalstation_thick_atmo('Maxwell Montes',93000,'sulphuric fog','sulphuric rain in upper atmosphere'))
 costal_stations.append(costalstation_no_atmo('Mare Tranquillitatis'))
 costal_stations.append(costalstation_no_atmo('Phobos'))
