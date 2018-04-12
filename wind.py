@@ -44,50 +44,67 @@ def wind(force_thing):
     if redo_thing>3 and force_thing<6:
             force = string_arr1[force_thing]+" or "+string_arr1[force_thing+1]
             up_flag=1
-    if redo_thing>3 and force>5 and force_thing<11:
+    if redo_thing>3 and force_thing>5 and force_thing<11:
             force = string_arr1[force_thing]+" to "+string_arr1[force_thing+1]
             up_flag=1
     condition=direction+" "+force
 #add wind direction/force change
     delta_direction=random.randint(-1,1)
     delta_force=random.randint(-1,1)
-    #changing only the wind force. If win speed had previous short-term up or down change then a movement later in the same direction is by 2 on the wind scale, 1 otherwise 
+    #changing only the wind force. If win speed had previous short-term up or down change then a movement later in the same direction is by 2 on the wind scale, 1 otherwise
+    changed_flag=0
     if delta_direction==0 and delta_force==-1:
         if down_flag==0 and force_thing>0:
             condition=condition+", decreasing "+string_arr1[force_thing-1]
+            changed_flag=1
         if down_flag==1 and force_thing>1:
             condition=condition+", decreasing "+string_arr1[force_thing-2]
+            changed_flag=1
     if delta_direction==0 and delta_force==1:        
         if up_flag==0 and force_thing<11:
             condition=condition+", increasing "+string_arr1[force_thing+1]
+            changed_flag=1
         if up_flag==1 and force_thing<10:
             condition=condition+", increasing "+string_arr1[force_thing+2]
+            changed_flag=1
     #changing both wind direction and force
     if delta_direction!=0 and delta_force!=0:
         if force_thing>0 and force_thing<11:
             if direction_thing>2 and (direction_thing)<9:
                 condition=condition+", becoming "+string_arr[direction_thing+delta_direction]+" "+string_arr1[force_thing+delta_force]
+                changed_flag=1
             if direction_thing==2:
                 if(delta_direction==-1):
                     condition=condition+", becoming "+string_arr[9]+" "+string_arr1[force_thing]
+                    changed_flag=1
                 else:
                     condition=condition+", becoming "+string_arr[direction_thing+delta_direction]+" "+string_arr1[force_thing+delta_force]
+                    changed_flag=1
                         
             if direction_thing==9:
                 if(delta_direction==1):
                     condition=condition+", becoming "+string_arr[2]+" "+string_arr1[force_thing+delta_force]
+                    changed_flag=1
                 else:
                     condition=condition+", becoming "+string_arr[direction_thing+delta_direction]+" "+string_arr1[force_thing+delta_force]
+                    changed_flag=1
+            if direction_thing<2:
+                redo_thing1=random.randint(2,9)
+                condition=condition+", becoming "+string_arr[redo_thing]+" "+string_arr1[force_thing+delta_force]
+                changed_flag=1
+                
     #When direction changes but force doesn't change to variable or cyclonic
     if delta_direction!=0 and delta_force==0:
         redo_thing1=random.randint(0,1)
         if redo_thing1==0:
             condition=condition+", becoming variable "+string_arr1[force_thing]
+            changed_flag=1
         if redo_thing1==1:
             condition=condition+", becoming cyclonic "+string_arr1[force_thing]
-    if delta_direction!=0 or delta_force!=0:
+            changed_flag=1
+    if changed_flag==1:
         redo_thing1=random.randint(0,1)
-        if redo_thing1==1:
+        if redo_thing1==0:
             condition=condition+" at times"
         if redo_thing1==1:
             condition=condition+" later"
