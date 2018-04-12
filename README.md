@@ -9,7 +9,7 @@ There are three parts to the shipping forecast; the area forecast, reports from 
 Area forecast:
 An area forecast has four parts; wind, sea conditions, weather, visibility. The weather is generated inside area_forecast.py as is the force for the wind (higher wind forces are less likely to be generated). The wind force is then passed to wind.py and seastate.py which generate wind and sea conditions based on the wind force. These parts are randomly generated and have no astrophysical meaning. The weather depends on the class of object an area forecast is for. There are
 
-  Hot Jupiters & L dwarfs, Super-earths, "earth-like" planets,"dead" locations: either empty space or planets with little or no atmosphere, nebulae, black holes
+  Hot Jupiters & L dwarfs, Neptune-like, Super-earths, "earth-like" planets,"dead" locations: either empty space or planets with little or no atmosphere, nebulae, black holes
   
 Some of these classes have some astrophysical things for fog, rain, drizzle and showers, some have no weather at all so always report "fair". I decided all L dwarfs, hot Jupiters and super-Earths had haze.
 Visibilty is generated in visibility.py. Visibility can only be "very poor" in the presence of fog.
