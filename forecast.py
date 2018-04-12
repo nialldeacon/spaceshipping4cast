@@ -50,6 +50,16 @@ class Ldwarflike:
     fair = 'fair'
     def __init__(self, name):
         self.name = name
+class neptunelike:
+    rain = 'rain'        
+    showers = 'diamond showers'
+    drizzle='diamond drizzle'
+    fog = 'ammonium sulfide fog'
+    has_fog=1
+    has_rain=1
+    fair = 'fair'
+    def __init__(self, name):
+        self.name = name
 class superearth:
     
     rain = 'rain'      
@@ -130,10 +140,13 @@ forecast_areas.append(nebula('Taurus Molecular Cloud'))
 forecast_areas.append(nebula('Chamaeleon Complex'))
 forecast_areas.append(dead('Kepler 10b'))
 forecast_areas.append(dead('Praesepe'))
+forecast_areas.append(neptunelike('Kepler 20d'))
 forecast_areas.append(nebula('Orion Nebula'))
 forecast_areas.append(superearth('Kepler 36b'))
+forecast_areas.append(neptunelike('Kepler 36c'))
 forecast_areas.append(dead('Gemini Bight'))
 forecast_areas.append(blackhole('Cygnus X-1'))
+forecast_areas.append(neptunelike('OGLE-2005-169L b'))
 forecast_areas.append(blackhole('V404 Cygni'))
 forecast_areas.append(dead('Westerlund 1'))
 forecast_areas.append(blackhole('Galactic Centre'))
