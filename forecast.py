@@ -134,6 +134,7 @@ forecast_areas.append(nebula('Orion Nebula'))
 forecast_areas.append(superearth('Kepler 36b'))
 forecast_areas.append(dead('Gemini Bight'))
 forecast_areas.append(blackhole('Cygnus X-1'))
+forecast_areas.append(blackhole('V404 Cygni'))
 forecast_areas.append(dead('Westerlund 1'))
 forecast_areas.append(blackhole('Galactic Centre'))
 forecast_areas.append(dead('Large Magellanic Cloud/Small Magellanic Cloud'))
@@ -166,7 +167,7 @@ costal_stations.append(costalstation_minimal_atmo('Charon',0.001))
 costal_stations.append(costalstation_no_atmo('Quaoar'))
 
 #generate area forecasts
-forecast_start_string="And now the Spaceshipping Forecast, issued by the Space Met Office on behalf of the Interstellar and Interplanetary Agency at 0505 today."
+forecast_start_string="And now the Spaceshipping Forecast, issued by the ExoMet Office on behalf of the Interplanetary and Spaceguard Agency at 0505 today."
 
 api.update_status(forecast_start_string)
 time.sleep(61)
@@ -199,7 +200,7 @@ for i0 in range(0,n_forecasts):
     api.update_status(forecast_string)
     time.sleep(delay)
 #generate inshore forecasts
-forecast_start_string="And here is the forecast for the inshore waters of the solar system valid for the following 24 hours issued by the Space Met Office at 0500 today"
+forecast_start_string="And here is the forecast for the inshore waters of the solar system valid for the following 24 hours issued by the ExoMet Office at 0500 today"
 api.update_status(forecast_start_string)
 time.sleep(61)
 n_areas=len(inshore_areas)
