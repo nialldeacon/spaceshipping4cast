@@ -96,10 +96,10 @@ def wind(force_thing):
     #When direction changes but force doesn't change to variable or cyclonic
     if delta_direction!=0 and delta_force==0:
         redo_thing1=random.randint(0,1)
-        if redo_thing1==0:
+        if redo_thing1==0 and force_thing!=0:
             condition=condition+", becoming variable "+string_arr1[force_thing]
             changed_flag=1
-        if redo_thing1==1:
+        if redo_thing1==1 and force_thing!=1:
             condition=condition+", becoming cyclonic "+string_arr1[force_thing]
             changed_flag=1
     if changed_flag==1:
