@@ -119,7 +119,6 @@ class nebula:
     fair = 'fair'
     def __init__(self, name):
         self.name = name
-
 gap=' '
 delay=3600        #setting time delay between forecasts
 #define forecast areas
@@ -186,7 +185,7 @@ api.update_status(forecast_start_string)
 time.sleep(61)
 n_areas=len(forecast_areas)
 n_forecasts=10
-use_vec1=random.sample(xrange(n_areas),n_forecasts)
+use_vec1=random.sample(range(n_areas),n_forecasts)
 use_vec=sorted(use_vec1)
 #loop over objects in the forecast
 for i0 in range(0,n_forecasts):
@@ -202,7 +201,7 @@ api.update_status(forecast_start_string)
 time.sleep(61)
 n_areas=len(costal_stations)
 n_forecasts=6
-use_vec1=random.sample(xrange(n_areas),n_forecasts)
+use_vec1=random.sample(range(n_areas),n_forecasts)
 use_vec=sorted(use_vec1)
 #loop over objects in the forecast
 for i0 in range(0,n_forecasts):
@@ -218,7 +217,7 @@ api.update_status(forecast_start_string)
 time.sleep(61)
 n_areas=len(inshore_areas)
 n_forecasts=4
-use_vec1=random.sample(xrange(n_areas),n_forecasts)
+use_vec1=random.sample(range(n_areas),n_forecasts)
 use_vec=sorted(use_vec1)
 #loop over objects in the forecast
 for i0 in range(0,n_forecasts):
